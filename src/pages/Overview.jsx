@@ -82,7 +82,7 @@ const Overview = () => {
         </div>
         <BarChart data={firstTimersPerMonth?.data} />
       </div>
-      <div className="flex flex-wrap gap-y-3 sm:gap-6 mt-8 mb-10">
+      <div className="flex sm:flex-nowrap flex-wrap gap-y-3 sm:gap-6 mt-8 mb-10">
         <GenderDistribution data={genderDistribution?.data} />
         <AdditionalInfo data={additionalInfo?.data} />
       </div>
