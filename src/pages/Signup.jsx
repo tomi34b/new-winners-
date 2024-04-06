@@ -105,8 +105,8 @@ const Signup = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <div className="flex-[0.4] bg-abstract bg-cover"></div>
-      <div className="flex-[0.6] px-10">
+      <div className="flex-[0.4] bg-abstract bg-cover hidden sm:flex"></div>
+      <div className="flex-1 sm:flex-[0.6] px-10">
         <div className="flex justify-end pt-10">
           <img src="/winners-logo.svg" />
         </div>
@@ -160,10 +160,10 @@ const Signup = () => {
             </form>
           </div>
           <div className="mt-8">
-            <p className="text-center">
+            <p className="text-center pb-6">
               <span className="text-gray-400">Already have an account? </span>
               <Link to={"/login"}>
-                <span className="font-semibold underline decoration-black">
+                <span className="font-semibold underline decoration-black text-nowrap">
                   LOG IN
                 </span>
               </Link>

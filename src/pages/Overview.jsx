@@ -50,27 +50,31 @@ const Overview = () => {
   );
 
   return (
-    <div className="p-6 pt-4 bg-100">
+    <div className="px-2 sm:p-6 pt-4 bg-100 w-full">
       <p className="font-bold font-urbanist text-2xl">Overview</p>
-      <div className="flex justify-between gap-5 mt-5 overflow-x-scroll">
-        <SummaryCard
-          title="New members"
-          subTitle="Overall"
-          count={membersCount?.count}
-          increment="3"
-        />
-        <SummaryCard
-          title="Baptized"
-          subTitle="Monthly"
-          count={baptizedCount?.count}
-          increment="3"
-        />
-        <SummaryCard
-          title="Unbaptized"
-          subTitle="Weekly"
-          count={unbaptizedCount?.count}
-          increment="3"
-        />
+      <div className="">
+        {/* <div className="w-full overflow-hidden hidden"> */}
+        <div className="flex overflow-x-auto space-x-4 p-4 w-[calc(100vw-16px)] sm:w-[calc(100vw-(48px+clamp(240px,20vw,305px)))] h-full overflow-scroll">
+          <SummaryCard
+            title="New members"
+            subTitle="Overall"
+            count={membersCount?.count}
+            increment="3"
+          />
+          <SummaryCard
+            title="Baptized"
+            subTitle="Monthly"
+            count={baptizedCount?.count}
+            increment="3"
+          />
+          <SummaryCard
+            title="Unbaptized"
+            subTitle="Weekly"
+            count={unbaptizedCount?.count}
+            increment="3"
+          />
+        </div>
+        {/* </div> */}
       </div>
       <div className="p-5 rounded-xl mt-10 bg-white">
         <div className="flex justify-between py-3 border-b">
@@ -78,7 +82,7 @@ const Overview = () => {
         </div>
         <BarChart data={firstTimersPerMonth?.data} />
       </div>
-      <div className="flex gap-6 mt-8">
+      <div className="flex flex-wrap gap-y-3 sm:gap-6 mt-8 mb-10">
         <GenderDistribution data={genderDistribution?.data} />
         <AdditionalInfo data={additionalInfo?.data} />
       </div>

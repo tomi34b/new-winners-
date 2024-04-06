@@ -6,15 +6,24 @@ import Overview from "../pages/Overview";
 import Members from "../pages/Members";
 import Profile from "../pages/Profile";
 import PrivateRoute from "../guards/PrivateRoute";
+import Redirect from "../guards/Redirect";
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: (
+      <Redirect>
+        <Login />
+      </Redirect>
+    ),
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <Redirect>
+        <Login />
+      </Redirect>
+    ),
   },
   {
     path: "/signup",

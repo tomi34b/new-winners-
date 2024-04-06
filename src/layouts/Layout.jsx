@@ -13,7 +13,7 @@ const Layout = () => {
         <div className="w-full max-w-[1440px] h-screen mx-auto">
           <TitleBar />
           <div className="flex-1 overflow-y-auto pt-10 sm:pt-0 px-2 sm:px-0">
-            <div className="">{<Outlet />}</div>
+            {<Outlet />}
           </div>
         </div>
       </div>

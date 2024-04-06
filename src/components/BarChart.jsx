@@ -15,7 +15,6 @@ defaults.font.family = "'Poppins', sans-serif";
 defaults.font.weight = "600";
 
 export const options = {
-  responsive: true,
   maintainAspectRatio: false,
   maxBarThickness: 20,
   scales: {

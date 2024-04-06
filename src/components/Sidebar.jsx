@@ -149,11 +149,11 @@ const Sidebar = ({ sidebarItems }) => {
       <button
         aria-label="Menu"
         onClick={() => setShowMenu(!showMenu)}
-        className="fixed md:hidden z-20 top-2 sm:top-4 right-2 sm:right-4 p-2 rounded-md bg-project-blue "
+        className="fixed md:hidden z-20 top-4 sm:top-4 right-2 sm:right-4 p-2 rounded-md bg-project-blue"
       >
         <img
           src={showMenu ? closeMenu : hamburgerMenu}
-          className="h-full invert"
+          className="h-6 invert"
         />
       </button>
 
@@ -169,11 +169,11 @@ const Sidebar = ({ sidebarItems }) => {
         <button
           aria-label="Menu"
           onClick={() => setShowMenu(!showMenu)}
-          className="absolute top-2 right-2 p-2 rounded-md bg-project-blue "
+          className="absolute top-4 right-2 p-2 rounded-md bg-project-blue "
         >
           <img
             src={showMenu ? closeMenu : hamburgerMenu}
-            className="h-full invert"
+            className="h-6 invert"
           />
         </button>
         <div

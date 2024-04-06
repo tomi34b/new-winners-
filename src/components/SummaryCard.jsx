@@ -3,7 +3,7 @@ import { PiArrowLineUpRightLight } from "react-icons/pi";
 
 const SummaryCard = (props) => {
   return (
-    <div className="relative overflow-hidden w-[337px] h-[178px] rounded-lg border-l-4 border-red-500 bg-[#1E1E1E] px-7 pt-4">
+    <div className="relative overflow-hidden min-w-[240px] w-[240px] sm:w-[337px] h-[178px] rounded-lg border-l-4 border-red-500 bg-[#1E1E1E] px-7 pt-4">
       <div className="rounded-full bg-[#29C5EE]/30 size-[147px] blur-xl absolute -top-10 right-0" />
       <div className="rounded-full bg-white/40 size-[45px] z-[1] absolute top-6 right-6 flex justify-center items-center">
         <PiArrowLineUpRightLight className="text-2xl text-white" />

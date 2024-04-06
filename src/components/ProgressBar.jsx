@@ -10,7 +10,7 @@ const ProgressBar = (props) => {
           className={`transition-all absolute left-0 top-0 h-full bg-gradient-to-br from-[#FFBF1A] to-[#FF4080] rounded-full`}
         />
       </div>
-      <div className="text-black/75 flex gap-x-2 items-center font-semibold">
+      <div className="text-black/75 flex gap-x-2 items-center font-semibold min-w-[90px] justify-between">
         <span>{props.percentage}%</span>
         <img src="/arrow-up.svg" />
       </div>

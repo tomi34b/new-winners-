@@ -25,17 +25,14 @@ const TitleBar = () => {
 
   useOutsideCloser(profileMenuRef, showProfileMenu, setShowProfileMenu);
 
-  const navigateToOverview = () => {
-    navigate("/dashboard/overview");
+  const navigateToProfile = () => {
+    navigate("/dashboard/profile");
   };
 
   return (
-    <div className="h-fit mb-4 flex justify-between w-full py-4 px-4 sticky top-0 bg-[#eeeeee] z-10 border-b border-[#272727]">
-      <div
-        className="flex gap-1 flex-nowrap items-center w-fit cursor-pointer"
-        onClick={navigateToOverview}
-      >
-        <div className="w-[278px] h-10 rounded-full relative flex justify-center items-center">
+    <div className="h-fit mb-4 flex justify-between w-full py-4 px-4 sticky top-0 bg-[#eeeeee] z-10 border-b border-[#272727] flex-wrap gap-y-3 gap-10">
+      <div className="flex gap-1 flex-nowrap items-center w-fit cursor-pointer">
+        <div className="w-[240px] sm:w-[278px] h-10 rounded-full relative flex justify-center items-center">
           <input
             className="block w-full h-full rounded-full bg-[#E4E4E4] pl-10 font-urbanist"
             placeholder="Search for attendant"
@@ -44,7 +41,7 @@ const TitleBar = () => {
         </div>
       </div>
       <div
-        className="flex gap-2 sm:gap-4 mr-4 items-center relative"
+        className="flex gap-2 sm:gap-4 translate-x-8 md:mr-4 md:pr-0 min-[480px]:translate-x-0 pr-8 sm:mr-8 items-center relative justify-end flex-1"
         ref={profileMenuRef}
       >
         <div className="size-10 rounded-full bg-white flex items-center justify-center">
@@ -60,7 +57,10 @@ const TitleBar = () => {
         >
           <div className="size-10 rounded-full bg-project-gray-2 relative bg-white">
             {/* profile image */}
-            <PiUserCircleLight className="w-full h-full object-contain" />
+            <PiUserCircleLight
+              className="w-full h-full object-contain"
+              onClick={navigateToProfile}
+            />
             {/* status indicator */}
           </div>
           {/* <div className="font-poppins flex flex-col justify-between items-start">
@@ -77,84 +77,6 @@ const TitleBar = () => {
             }
           /> */}
         </button>
-        {/* Profile menu */}
-        <AnimatePresence>
-          {showProfileMenu && (
-            <motion.div
-              initial={{ opacity: 0, translateY: -10 }}
-              animate={{ opacity: 1, translateY: 0 }}
-              exit={{ opacity: 0, translateY: -10 }}
-              className="absolute flex flex-col gap-y-1 text-xs top-14 border border-solid border-project-gray min-w-[240px] right-0 py-2 px-2 bg-white shadow-lg w-full rounded"
-            >
-              <p className="w-full border-b border-solid border-project-gray-2 pb-1 font-poppins font-semibold">
-                Account Details
-              </p>
-              <div className="flex flex-col gap-y-1 mt-2">
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  Name:{" "}
-                  <span className="whitespace-nowrap font-normal">
-                    {user?.name}
-                  </span>
-                </div>
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  ID:{" "}
-                  <span className="whitespace-nowrap font-normal">
-                    {user?.id_number}
-                  </span>
-                </div>
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  Email:{" "}
-                  <span className="whitespace-nowrap font-normal">
-                    {user?.email}
-                  </span>
-                </div>
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  Account Status:{" "}
-                  <span
-                    className={`whitespace-nowrap font-normal ${
-                      user?.disabled
-                        ? "bg-yellow-200 text-yellow-700"
-                        : "bg-green-200 text-green-700"
-                    } rounded-full inline-flex p-1 w-fit px-2`}
-                  >
-                    {user?.disabled ? "Disabled" : "Enabled"}
-                  </span>
-                </div>
-              </div>
-              <p className="w-full border-b border-solid border-project-gray-2 pb-1 font-poppins font-semibold mt-2">
-                Division Information
-              </p>
-              <div className="flex flex-col gap-y-1 mt-2">
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  Division Location:{" "}
-                  <span className="whitespace-nowrap font-normal">
-                    {divisionData.currentData?.data[0]?.division_location}
-                  </span>
-                </div>
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  Division Code:{" "}
-                  <span className="whitespace-nowrap font-normal">
-                    {divisionData.currentData?.data[0]?.division_code}
-                  </span>
-                </div>
-                <div className="font-poppins text-project-emerald font-medium whitespace-nowrap overflow-hidden text-ellipsis">
-                  Division ID:{" "}
-                  <span className="whitespace-nowrap font-normal">
-                    {divisionData.currentData?.data[0]?.division_id}
-                  </span>
-                </div>
-              </div>
-              <button
-                aria-label="View Profile"
-                className="p-2 rounded bg-project-gray hover:bg-project-blue w-full flex justify-center items-center transition-all group mt-2"
-              >
-                <span className="font-poppins text-project-blue font-semibold text-xs group-hover:text-white">
-                  View Profile
-                </span>
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );

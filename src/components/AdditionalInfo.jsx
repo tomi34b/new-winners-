@@ -7,7 +7,7 @@ const AdditionalInfo = (props) => {
       <div className="flex flex-col gap-y-5 mt-5">
         <div className="flex gap-x-5 justify-start">
           <div className="flex-[0.5]">Worshiped with us before?</div>
-          <div className="flex flex-[0.5] justify-between">
+          <div className="flex flex-[0.5] justify-between gap-x-3">
             <div className="flex gap-2 items-center">
               <p>{props?.data?.worshipped_with_us}</p>
               <div className="flex justify-center items-center w-10 py-2 rounded border">
@@ -25,7 +25,7 @@ const AdditionalInfo = (props) => {
         </div>
         <div className="flex gap-x-5 justify-start">
           <div className="flex-[0.5]">Attended Word of Faith Bible school?</div>
-          <div className="flex flex-[0.5] justify-between">
+          <div className="flex flex-[0.5] justify-between gap-x-3">
             <div className="flex gap-2 items-center">
               <p>{props?.data?.attended_word_of_faith_bible_school}</p>
               <div className="flex justify-center items-center w-10 py-2 rounded border">

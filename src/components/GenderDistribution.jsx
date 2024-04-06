@@ -4,7 +4,6 @@ import ProgressBar from "./ProgressBar";
 
 const GenderDistribution = (props) => {
   const calculateValue = (gender) => {
-    console.log(props);
     const total = props?.data?.male + props?.data?.female + props?.data?.others;
 
     if (isNaN(total)) return 0;
@@ -28,7 +27,7 @@ const GenderDistribution = (props) => {
   };
 
   return (
-    <div className="rounded-xl bg-white mt-8 p-5 pt-6 px-6 flex-1">
+    <div className="rounded-xl bg-white mt-8 p-5 pt-6 px-2 sm:px-6 flex-1 min-w-full">
       <p className="text-black/50 font-semibold">Gender distribution</p>
       <div className="flex flex-col gap-y-5 mt-5">
         <div className="flex justify-start gap-4 items-center">
