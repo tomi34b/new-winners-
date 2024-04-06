@@ -36,9 +36,7 @@ const Table = (props) => {
           <tr className="hover:bg-gray-100" key={index}>
             <td className="py-3 pl-3">{row.fullname ?? "----------"}</td>
             <td className="py-3 pl-3">
-              {row.mobile_number
-                ? String(row.mobile_number).slice(0, 4) + "****"
-                : "----------"}
+              {row.mobile_number ? String(row.mobile_number) : "----------"}
             </td>
             <td className="py-3 pl-3">{row?.email ?? "----------"}</td>
             <td className="py-3 pl-3">{row.address ?? "----------"}</td>

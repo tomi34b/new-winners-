@@ -96,7 +96,7 @@ const Sidebar = ({ sidebarItems }) => {
         <div className="w-full h-full pt-10 rounded-[1.25rem] relative bg-primary-black poppins flex flex-col">
           <div className="w-full px-2 pl-8 flex flex-col items-start justify-center font-bold text-base gap-y-1">
             <img
-              src={winnersLogo}
+              src={"/winners-logo.svg"}
               className="w-[180px] cursor-pointer"
               onClick={() => navigate("/dashboard")}
             />
