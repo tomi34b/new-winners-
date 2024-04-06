@@ -33,8 +33,8 @@ const Members = () => {
   } = useGetRequest("https://first-timers-api.onrender.com/api/v1/first_timer");
 
   return (
-    <div className="p-6 pt-4 bg-100">
-      <div className="flex justify-between gap-x-5 mt-5">
+    <div className="p-6 px-2 sm:px-6 pt-4 bg-100 relative">
+      <div className="flex justify-between overflow-x-auto space-x-4 p-4 w-[calc(100vw-32px)] md:w-[calc(100vw-(clamp(10px+240px,20vw,305px)))] h-full overflow-scroll px-2 sm:px-2">
         <SummaryCard
           title="New members"
           subTitle="Overall"
@@ -58,7 +58,7 @@ const Members = () => {
         <p className="font-bold font-urbanist text-2xl">Congregation</p>
         <YearDropdown />
       </div>
-      <div className="p-5 rounded-xl mt-5 bg-white">
+      <div className="p-5 rounded-xl mt-5 bg-white overflow-auto w-[calc(100vw-32px)] md:w-[calc(100vw-(10px+clamp(240px,16vw,305px)))]">
         <Table data={firstTimers} />
       </div>
     </div>

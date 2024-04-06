@@ -20,9 +20,8 @@ const Table = (props) => {
     // Add more data as needed
   ];
 
-  console.log(props);
   return props.data !== null ? (
-    <table className="w-full min-w-[720px] table-auto rounded-lg overflow-hidden">
+    <table className="w-full min-w-[720px] table-auto rounded-lg">
       <thead className="rounded">
         <tr className="bg-[#F3F5FF] font-urbanist">
           <th className="text-start py-3 pl-3">Name</th>

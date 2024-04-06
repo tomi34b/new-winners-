@@ -54,7 +54,7 @@ const Overview = () => {
       <p className="font-bold font-urbanist text-2xl">Overview</p>
       <div className="">
         {/* <div className="w-full overflow-hidden hidden"> */}
-        <div className="flex overflow-x-auto space-x-4 p-4 w-[calc(100vw-16px)] sm:w-[calc(100vw-(48px+clamp(240px,20vw,305px)))] h-full overflow-scroll">
+        <div className="flex justify-between overflow-x-auto space-x-4 p-4 w-[calc(100vw-32px)] md:w-[calc(100vw-(clamp(10px+240px,20vw,305px)))] h-full overflow-scroll px-2 sm:px-2">
           <SummaryCard
             title="New members"
             subTitle="Overall"
@@ -76,7 +76,7 @@ const Overview = () => {
         </div>
         {/* </div> */}
       </div>
-      <div className="p-5 rounded-xl mt-10 bg-white">
+      <div className="p-5 rounded-xl mt-10 bg-white relative h-fit mx-auto w-[calc(100vw-32px)] md:w-[calc(100vw-(clamp(10px+240px,20vw,305px)))]">
         <div className="flex justify-between py-3 border-b">
           <p className="">Average first timers per month</p>
         </div>

@@ -27,7 +27,7 @@ const GenderDistribution = (props) => {
   };
 
   return (
-    <div className="rounded-xl bg-white mt-8 p-5 pt-6 px-2 sm:px-6 flex-1 min-w-full">
+    <div className="rounded-xl bg-white mt-8 p-5 pt-6 px-2 sm:px-6 flex-1">
       <p className="text-black/50 font-semibold">Gender distribution</p>
       <div className="flex flex-col gap-y-5 mt-5">
         <div className="flex justify-start gap-4 items-center">
