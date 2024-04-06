@@ -3,34 +3,29 @@ import SummaryCard from "../components/SummaryCard";
 import Table from "../components/Table";
 import YearDropdown from "../components/YearDropdown";
 import useGetRequest from "../hooks/useGetRequest";
+import { baseURL } from "../constants/url";
 
 const Members = () => {
   const {
     data: membersCount,
     isLoading: isMembersLoading,
     error: membersError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/members_count"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/members_count");
   const {
     data: baptizedCount,
     isLoading: isBaptizedLoading,
     error: baptizedError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/baptized_members_count"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/baptized_members_count");
   const {
     data: unbaptizedCount,
     isLoading: isUnbaptizedLoading,
     error: unbaptizedError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/unbaptized_members_count"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/unbaptized_members_count");
   const {
     data: firstTimers,
     isLoading: isFirstTimersLoading,
     error: firstTimersError,
-  } = useGetRequest("https://first-timers-api.onrender.com/api/v1/first_timer");
+  } = useGetRequest(baseURL + "/api/v1/first_timer");
 
   return (
     <div className="p-6 px-2 sm:px-6 pt-4 bg-100 relative">

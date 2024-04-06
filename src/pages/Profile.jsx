@@ -1,10 +1,9 @@
 import React from "react";
 import useGetRequest from "../hooks/useGetRequest";
+import { baseURL } from "../constants/url";
 
 const Profile = () => {
-  const { data, isLoading, error } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/user/me"
-  );
+  const { data, isLoading, error } = useGetRequest(baseURL + "/api/v1/user/me");
 
   console.log(data);
   return (

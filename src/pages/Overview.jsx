@@ -4,50 +4,39 @@ import BarChart from "../components/BarChart";
 import GenderDistribution from "../components/GenderDistribution";
 import AdditionalInfo from "../components/AdditionalInfo";
 import useGetRequest from "../hooks/useGetRequest";
+import { baseURL } from "../constants/url";
 
 const Overview = () => {
   const {
     data: membersCount,
     isLoading: isMembersLoading,
     error: membersError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/members_count"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/members_count");
   const {
     data: baptizedCount,
     isLoading: isBaptizedLoading,
     error: baptizedError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/baptized_members_count"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/baptized_members_count");
   const {
     data: unbaptizedCount,
     isLoading: isUnbaptizedLoading,
     error: unbaptizedError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/unbaptized_members_count"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/unbaptized_members_count");
   const {
     data: firstTimersPerMonth,
     isLoading: isFirstTimersPerMonthLoading,
     error: firstTimersPerMonthError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/first_timers_per_month"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/first_timers_per_month");
   const {
     data: genderDistribution,
     isLoading: isGenderDistributionLoading,
     error: genderDistributionError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/gender_distribution"
-  );
+  } = useGetRequest(baseURL + "/api/v1/dashboard/gender_distribution");
   const {
     data: additionalInfo,
     isLoading: isAdditionalInfoLoading,
     error: additionalInfoError,
-  } = useGetRequest(
-    "https://first-timers-api.onrender.com/api/v1/dashboard/additional_info"
-  );
+  } = useGetRequest(baseURL + "api/v1/dashboard/additional_info");
 
   return (
     <div className="px-2 sm:p-6 pt-4 bg-100 w-full">

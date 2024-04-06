@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Input from "../components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import { baseURL } from "../constants/url";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -46,19 +47,16 @@ const Login = () => {
       // console.log("Form submitted successfully");
       try {
         setIsLoading(true);
-        const response = await fetch(
-          "https://first-timers-api.onrender.com/api/v1/user/login",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              email: formData.email,
-              password: formData.password,
-            }),
-          }
-        );
+        const response = await fetch(baseURL + "/api/v1/user/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        });
 
         if (!response.ok) {
           setIsLoading(false);
