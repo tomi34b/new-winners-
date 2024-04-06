@@ -95,7 +95,11 @@ const Sidebar = ({ sidebarItems }) => {
         {/* sidebar */}
         <div className="w-full h-full pt-10 rounded-[1.25rem] relative bg-primary-black poppins flex flex-col">
           <div className="w-full px-2 pl-8 flex flex-col items-start justify-center font-bold text-base gap-y-1">
-            <img src={winnersLogo} className="w-[180px]" />
+            <img
+              src={winnersLogo}
+              className="w-[180px] cursor-pointer"
+              onClick={() => navigate("/dashboard")}
+            />
           </div>
           <div className="w-full flex flex-col items-start pl-6 gap-y-7 relative mt-12 flex-1 overflow-scroll pb-20 hide-scrollbar">
             {sidebarItems.map((sidebarItem, i) => {
